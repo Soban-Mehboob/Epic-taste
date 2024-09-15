@@ -1,0 +1,755 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap");
+
+*{
+  font-family: "Roboto",sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+  text-transform: capitalize;
+  transition: 0.2s linear;
+}
+
+html{
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-padding-top:9rem;
+    scroll-behavior:smooth;
+}
+
+html::-webkit-scrollbar{
+    width:0.8rem;
+}
+
+html::-webkit-scrollbar-track{
+    background: transparent;
+}
+
+html::-webkit-scrollbar-thumb{
+    background: #fff;
+    border-radius:5rem;
+}
+
+body{
+    background: #010103;
+    overflow-x: hidden;
+}
+
+/* =================================== */
+
+section{
+    padding:2rem 7%
+}
+.heading {
+    text-align: center;
+    color: #fff;
+    background: #ffc107;
+    cursor: pointer;
+}
+
+.img-logo {
+    height: 80px;
+    width: 100px;
+}
+
+.btn:hover {
+    letter-spacing: 0.2rem;
+}
+
+.header {
+    background: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 7%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    transition: background-color 0.3s ease;
+}
+
+.header.scrolled {
+    background-color: #a00202; /* Add background color when scrolling */
+}
+
+.header .logo {
+    flex: 1;
+}
+
+.header .navbar {
+    flex: 2;
+    display: flex;
+    justify-content: center;
+}
+
+.header .navbar a {
+    margin: 0 1rem;
+    font-size: 1.6rem;
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease, border-bottom 0.3s ease;
+}
+
+.header .navbar a:hover {
+    color: #ffc107;
+    border-bottom: 0.1rem solid #ffc107;
+    padding-bottom: 0.5rem;
+}
+
+.header .icons {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    gap: 2rem;
+}
+
+.header .icons div {
+    color: #fff;
+    cursor: pointer;
+    font-size: 2.5rem;
+    transition: color 0.3s ease;
+}
+
+.header .icons div:hover {
+    color: #ffc107;
+}
+
+#menu-btn {
+    display: none; /* Add media query for mobile to display this */
+}
+
+/* Search form styles */
+.header .search-form {
+    position: absolute;
+    top: 115%;
+    right: 7%;
+    background: #fff;
+    width: 50rem;
+    height: 5rem;
+    display: flex;
+    align-items: center;
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: transform 0.3s ease;
+}
+
+.header .search-form.active {
+    transform: scaleY(1);
+}
+
+.header .search-form input {
+    height: 100%;
+    width: 100%;
+    font-size: 1.6rem;
+    color: #13131a;
+    padding: 1rem;
+}
+
+.header .search-form label:hover {
+    color: #ffc107;
+}
+
+/* Cart styles */
+.header .cart-items-container {
+    position: absolute;
+    top: 115%;
+    right: -100%;
+    height: auto; /* Change to auto to fit content dynamically */
+    width: 35rem;
+    background: #fff;
+    padding: 0 1.5rem;
+    transition: right 0.3s ease;
+}
+
+.header .cart-items-container.active {
+    right: 0;
+}
+
+.header .cart-items-container .cart-item {
+    position: relative;
+    margin: 2rem 0;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.header .cart-items-container .cart-item .times {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 2rem;
+    cursor: pointer;
+    color: #13131a;
+}
+
+.header .cart-items-container .cart-item .times:hover {
+    color: #ffc107;
+}
+
+.menu-imgs {
+    max-width: 8.5rem;
+}
+
+.header .cart-items-container .cart-item .content h3 {
+    font-size: 2rem;
+    color: #13131a;
+    padding-bottom: 0.5rem;
+}
+
+.header .cart-items-container .cart-item .content .price {
+    font-size: 1.5rem;
+    color: #ffc107;
+}
+
+.header .cart-items-container .button-1 {
+    background: #ffc107;
+    color: #fff;
+    padding: 1rem 2rem;
+    text-align: center;
+    font-size: 1.6rem;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    display: inline-block;
+    text-decoration: none;
+    margin-top: 1rem;
+    transition: background 0.3s ease;
+}
+
+.header .cart-items-container .button-1:hover {
+    background: #e5a600;
+}
+
+/* Responsive adjustments */
+
+
+/* ===================================== */
+
+.home{
+     min-height: 100vh;
+     display: flex;
+     align-items: center;
+     background: linear-gradient(90deg, rgb(0 0 0 / 90%),rgb(68 68 68 / 35%)),
+     url(../assests/home.jpeg) no-repeat;
+     background-size: cover;
+     background-position: center;
+}
+
+.home .content{
+    max-width: 60rem;
+}
+
+.home span{
+    color: #ffc107;
+    text-transform: uppercase;
+}
+
+.home .content h3{
+    font-size: 6rem;
+    text-transform: uppercase;
+    color: #fff;
+}
+
+.home .content p{
+    font-size: 2rem;
+    font-weight: lighter;
+    line-height: 1.8;
+    padding: 1rem 0;
+    color: #eee;
+}
+
+.btn-home{
+    background: #ffc107;
+    color: #fff;
+    padding: 1rem 2rem; 
+    text-align: center;
+    font-size: 1.6rem; 
+    border: none; 
+    border-radius: 0.5rem;
+    cursor: pointer;
+    display: inline-block; 
+    text-decoration: none; 
+    margin-top: 1rem; 
+    transition:  0.3s;
+}
+
+/* === */
+.heading-about{
+    color: #fff;
+    font-size: xx-large;
+    text-align: center;
+    margin: 50px;
+}
+.head{
+    color: #ffc107;
+}
+.about .row{
+    display: flex;
+    align-items: center;
+    background: #13131a;
+    flex-wrap: wrap;
+}
+
+.about .row .image{
+    flex: 1 1 45rem;
+}
+
+.about .row .image img{
+    width: 100%;
+}
+
+.about .row .content{
+    flex: 1 1 45rem;
+    padding: 2rem;
+}
+
+.about .row .content h3{
+    font-size: 3rem;
+    color: #fff;
+}
+
+.about .row .content p{
+    font-size: 1.6rem;
+    color: #ccc;
+    padding: 1rem 0;
+    line-height: 1.8;
+}
+
+.btn-about{
+    background: #ffc107;
+    color: #fff;
+    padding: 1rem 2rem; 
+    text-align: center;
+    font-size: 1.6rem; 
+    border: none; 
+    border-radius: 0.5rem;
+    cursor: pointer;
+    display: inline-block; 
+    text-decoration: none; 
+    margin-top: 1rem; 
+    transition:  0.3s;
+}
+/* ================== */
+
+.box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(30rem,1fr));
+    gap:1.5rem
+}
+
+.heading-menu{
+    color: #fff;
+    font-size: xx-large;
+    text-align: center;
+    margin: 50px;
+}
+
+.heading-menu span{
+    color:#ffc107;
+}
+.menu .box-container .box{
+    padding: 5rem;
+    text-align: center;
+    border: 0.2rem solid #ffc107;
+}
+
+.menu .box-container .box img{
+    height: 10rem;
+    border-radius: 50%;
+}
+
+.menu .box-container .box h3{
+    color: #fff;
+    font-size: 2rem;
+    padding: 1rem 0;
+}
+
+.menu .box-container .box .price{
+    color: #fff;
+    font-size: 2.5rem;
+    padding: 0.5rem 0;
+}
+
+.menu .box-container .box .price span{
+    font-size: 1.5rem;
+    text-decoration: line-through;
+    font-weight: lighter;
+}
+
+.menu .box-container .box:hover{
+    background: #443300;
+    transition: 0.5s;
+}
+
+.btn-menu{
+    background: #ffc107;
+    color: #fff;
+    padding: 1rem 2rem; 
+    text-align: center;
+    font-size: 1.6rem; 
+    border: none; 
+    border-radius: 0.5rem;
+    cursor: pointer;
+    display: inline-block; 
+    text-decoration: none; 
+    margin-top: 1rem; 
+    transition:  0.3s;
+}
+
+/* =========== */
+
+.product-heading{
+    color: #fff;
+    font-size: xx-large;
+    text-align: center;
+    margin: 50px;
+}
+
+.product-heading span{
+    color: #ffc107;
+}
+
+.products .box-container .box{
+    text-align: center;
+    border: 0.2rem solid #ffc107;
+    padding: 2rem;
+}
+
+.products .box-container .box .icons a{
+    height:2rem;
+    width: 2rem;
+    line-height: 5rem;
+    font-size: 2.5rem;
+    border: 0.2rem solid #ffc107;
+    color: #fff;
+    margin: 0.3rem;
+}
+
+.products .box-container .box .icons a:hover{
+    background:#ffc107;
+}
+
+.products .box-container .box .image{
+    padding: 2.5rem 0;
+}
+
+.products .box-container .box .image img{
+    height: 10rem;
+}
+
+.products .box-container .box .content h3{
+    color: #fff;
+    font-size: 2.5rem;
+}
+
+.products .box-container .box .content .stars{
+    padding: 1.5rem;
+}
+
+.products .box-container .box .content .stars a{
+    font-size:1.7rem;
+    color: #ffc107;
+}
+
+.products .box-container .box .content .price{
+    color: #fff;
+    font-size: 2.5rem;
+}
+
+.products .box-container .box .content .price span{
+    text-decoration: line-through;
+    font-weight: lighter;
+    font-size: 1.5rem;
+}
+
+/* ======================= */
+
+.review-heading{
+    color: #fff;
+    font-size: xx-large;
+    text-align: center;
+    margin: 50px;
+}
+.review-heading span{
+    color: #ffc107;
+}
+
+.quote{
+    height: 5rem;
+}
+
+.review .box-container .box{
+    border: 0.2rem solid #ffc107;
+    text-align:center;
+    padding: 3rem 2rem;
+}
+
+.review .box-container .box p{
+    font-size: 1.5rem;
+    line-height: 1.8;
+    color: #ccc;
+    padding: 2rem 0;
+}
+
+.review .box-container .box .user{
+    height: 7rem;
+    width: 7rem;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.review .box-container .box h3{
+    padding: 1rem 0;
+    font-size: 2rem;
+    color: #fff;
+}
+
+.review .box-container .box .stars a{
+    font-size: 1rem;
+    color: #ffc107;
+}
+
+/* ============= */
+
+
+.contact .row{
+    display: flex;
+    background: #13131a;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.contact .row .map{
+    flex: 1 1 45rem;
+    width: 100%;
+    object-fit: cover;
+}
+
+.contact .row form{
+    flex: 1 1 45rem;
+    padding: 5rem 2rem;
+    text-align: center;
+}
+
+.contact .row form h3{
+    text-transform: uppercase;
+    font-size: 3.5rem;
+    color: #fff;
+}
+
+.contact .row form .inputBox{
+    display: flex;
+    align-items: center;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    background: #13131a;
+    border: 0.2rem solid #ffc107;
+}
+
+.contact .row form .inputBox span{
+    color: #fff;
+    font-size: 2rem;
+    padding-left: 2rem;
+}
+
+.contact .row form .inputBox input{
+    width: 100%;
+    padding: 2rem;
+    font-size: 1.7rem;
+    color: #fff;
+    text-transform: none;
+    background: none;
+}
+
+.form-btn{
+    background: #ffc107;
+    color: #fff;
+    padding: 1rem 2rem; 
+    text-align: center;
+    font-size: 1.6rem; 
+    border: none; 
+    border-radius: 0.5rem;
+    cursor: pointer;
+    display: inline-block; 
+    text-decoration: none; 
+    margin-top: 1rem; 
+    transition:  0.3s;   
+}
+/* ===== */
+
+.blog-heading{
+    color: #fff;
+    font-size: xx-large;
+    text-align: center;
+    margin: 50px;
+}
+
+.blog-heading span{
+    color: #ffc107;
+}
+
+.blog .box-container .box{
+    border: 0.2rem solid #ffc107;
+}
+
+.blog .box-container .box .image{
+    height: 25rem;
+    overflow: hidden;
+    width: 100%;
+}
+
+.blog .box-container .box .image img{
+    height: 100%;
+    object-fit: cover;
+    width: 100%;
+}
+
+.blog .box-container .box:hover .image img{
+    transform: scale(1.2);
+}
+
+.blog .box-container .box .content{
+    padding: 2rem;
+}
+
+.blog .box-container .box .content .title{
+    font-size: 2.5rem;
+    line-height: 1.5;
+    color: #fff;
+}
+
+.blog .box-container .box .content .title:hover{
+    color: #ffc107;
+}
+
+.blog .box-container .box .content span{
+    color: #ffc107;
+    display: block;
+    padding-top: 1rem;
+    font-size: 2rem;
+}
+.blog .box-container .box .content p{
+    font-size: 1.6rem;
+    line-height: 1.8;
+    color: #ccc;
+    padding: 1rem 0;
+}
+
+.blog-btn{
+    background: #ffc107;
+    color: #fff;
+    padding: 1rem 2rem; 
+    text-align: center;
+    font-size: 1.6rem; 
+    border: none; 
+    border-radius: 0.5rem;
+    cursor: pointer;
+    display: inline-block; 
+    text-decoration: none; 
+    margin-top: 1rem; 
+    transition:  0.3s;  
+}
+
+/* ======== */
+
+
+.footer {
+    background-color: #180000; /* Dark background color for contrast */
+    color: #fff; /* White text color */
+    padding: 2rem 0;
+    text-align: center; /* Center-aligns all text */
+}
+
+.footer .share {
+    margin-bottom: 2rem; /* Adds spacing below the social media icons */
+}
+
+.footer .share a {
+    color: #fff; /* White color for social media icons */
+    font-size: 2rem; /* Increases size of icons */
+    margin: 0 1rem; /* Adds spacing between icons */
+    transition: color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.footer .share a:hover {
+    color: #ffc107; /* Changes icon color on hover */
+}
+
+.footer .links {
+    margin-bottom: 2rem; /* Adds spacing below the navigation links */
+}
+
+.footer .links a {
+    display: inline-block; /* Keeps links in line */
+    border: 1px solid #ffc107;
+    color: #fff; /* White color for links */
+    font-size: 2rem; /* Increases font size of links */
+    margin: 0 1rem; /* Adds horizontal spacing between links */
+    padding: 3px;
+    text-decoration: none; /* Removes underline from links */
+    transition: color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.footer .links a:hover {
+    color: #ffc107; /* Changes link color on hover */
+}
+
+.footer .credit {
+    font-size: 1rem; /* Font size for credit text */
+    color: #fff;
+}
+
+.footer .credit span {
+    color: #ffc107; /* Highlight creator name */
+    font-weight: bold; /* Makes creator name bold */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 768px) {
+    #menu-btn {
+        display: inline-block;
+    }
+
+    .header .navbar {
+        position: absolute;
+        top: 100%;
+        right: -100%;
+        background: #000;
+        width: 30rem;
+        height: calc(100vh - 9.5rem);
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 2rem 1.5rem; /* Add padding to top and sides */
+        transition: right 0.3s ease;
+        justify-content: flex-start; /* Start items from the top */
+    }
+
+    .header .navbar.active {
+        right: 0;
+    }
+
+    .header .navbar a {
+        color: #fff;
+        display: block;
+        margin-bottom: 1.5rem;
+        font-size: 1.8rem;
+        width: 100%; /* Make links full width */
+        padding: 1rem 0; /* Add padding around the links */
+        text-align: left; /* Align text to the left */
+    }
+}
